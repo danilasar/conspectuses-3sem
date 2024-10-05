@@ -1,0 +1,20 @@
+Microsoft Windows [Version 10.0.22631.3007]
+(c) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+C:\Users\Egor>net config workstation
+Имя компьютера                                \\Smirnov-NOTE
+Полное имя компьютера                         Smirnov-Note
+Имя пользователя                              Egor
+
+Активная рабочая станция на
+        NetBT_Tcpip_{3D4D5BD5-8DC8-45F9-A906-269A13B736B3} (90E86818E425)
+
+Версия программы                              Windows 11 Enterprise
+
+Домен рабочей станции                         WORKGROUP
+Домен входа                                   SMIRNOV-NOTE
+
+Интервал ожидания открытия COM-порта (с)      0
+Отсчет передачи COM-порта (байт)              16
+Таймаут передачи COM-порта (мс)               250
+Команда выполнена успешно.

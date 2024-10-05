@@ -1,0 +1,57 @@
+Turbo Assembler	 Version 2.0	    09/24/24 10:33:19	    Page 1
+example3.asm
+
+
+
+      1	0000			     .model tiny	       ;Модель памяти TINY,	в которой код,	    +
+      2				     данные и стек
+      3							       ;размещаются в одном и	том же сегменте+
+      4				     размером до 64Кб
+      5	0000			     .code		       ;Начало сегмента кода
+      6				     org 100h		       ;Устанавливает значение программного+
+      7				     счетчика в 100h
+      8							       ;Начало необходимое для COM-программы,
+      9							       ;которая загружается в память с	    +
+     10				     адреса PSP:100h
+     11
+     12	0100			     start:
+     13	0100  B4 09		     mov AH,09h
+     14	0102  BA 010Cr		     mov DX,offset Hello
+     15	0105  CD 21		     int 21h
+     16	0107  B8 4C00		     mov AX,4C00h
+     17	010A  CD 21		     int 21h
+     18				     ;===== Data =====
+     19	010C  47 72 6F 67 72 69	65+  Hello db 'Grogriev	Danila,	251$'
+     20	      76 20 44 61 6E 69	6C+
+     21	      61 2C 20 32 35 31	24
+     22				     end start
+Turbo Assembler	 Version 2.0	    09/24/24 10:33:19	    Page 2
+Symbol Table
+
+
+
+
+Symbol Name			  Type	 Value
+
+??DATE				  Text	 "09/24/24"
+??FILENAME			  Text	 "example3"
+??TIME				  Text	 "10:33:19"
+??VERSION			  Number 0200
+@CODE				  Text	 DGROUP
+@CODESIZE			  Text	 0
+@CPU				  Text	 0101H
+@CURSEG				  Text	 _TEXT
+@DATA				  Text	 DGROUP
+@DATASIZE			  Text	 0
+@FILENAME			  Text	 EXAMPLE3
+@MODEL				  Text	 1
+@WORDSIZE			  Text	 2
+HELLO				  Byte	 DGROUP:010C
+START				  Near	 DGROUP:0100
+
+Groups & Segments		  Bit Size Align  Combine Class
+
+DGROUP				  Group
+  _DATA				  16  0000 Word	  Public  DATA
+  _TEXT				  16  0121 Word	  Public  CODE
+

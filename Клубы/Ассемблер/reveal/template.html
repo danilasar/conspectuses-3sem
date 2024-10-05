@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>%s</title>
+    <link rel="icon" type="image/x-icon" href="/dist/favicon.png" />
+    <!-- TODO: full custom css after reset.css -->
+    <!-- <link rel="stylesheet" href="dist/reset.css"> -->
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/dsc.css" id="theme" />
+    <!-- Theme used for syntax highlighted code -->
+    <!--<link rel="stylesheet" href="dist/plugin/highlight/monokai.css" />--?
+    <!--<link rel="stylesheet" href="dist/plugin/highlight/stackoverflow-light.css">-->
+    <link rel="stylesheet" href="dist/plugin/highlight/vs.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section
+          data-markdown="%s"
+          data-separator="^---"
+          data-separator-vertical="^--"
+          data-separator-notes="^Note:"
+          data-charset="utf-8">
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="dist/plugin/zoom/zoom.js"></script>
+    <script src="dist/plugin/notes/notes.js"></script>
+    <script src="dist/plugin/markdown/markdown.js"></script>
+    <script src="dist/plugin/highlight/highlight.js"></script>
+    <script src="dist/plugin/math/math.js"></script>
+    <script>
+
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        autoAnimateEasing: 'ease-out',
+        autoAnimateDuration: 0.8,
+        autoAnimateUnmatched: true,
+        plugins: [
+          RevealZoom,
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes,
+          RevealMath.KaTeX
+        ]
+      });
+    </script>
+
+<script>
+	var painted = 0;
+	function danya_paint() {
+		console.log("aboba")
+		let rows = document.querySelectorAll("#flags_table tr");
+		let child_numbers = [1, 4, 5, 9];
+		rows.forEach(function(row) {
+		if(painted >= child_numbers.length) {
+		    	child_numbers.forEach(function(number) {
+			        row.children[number].classList.remove("painted");
+		        });
+		        return;
+		    }
+		    row.children[child_numbers[painted]].classList.add("painted");
+		});
+		++painted;
+		if(painted > child_numbers.length) {
+		    painted = 0;
+		}
+	}
+</script>
+
+
+  </body>
+</html>

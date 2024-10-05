@@ -1,0 +1,32 @@
+
+C:\Users\Artem>dir /A:H
+ Том в устройстве C имеет метку Windows 11
+ Серийный номер тома: 1975-3586
+
+ Содержимое папки C:\Users\Artem
+
+26.03.2024  00:22    <DIR>          AppData
+26.03.2024  00:22    <DIR>          Application Data
+26.03.2024  00:22    <DIR>          Cookies
+26.03.2024  00:22    <DIR>          Local Settings
+26.03.2024  00:22    <DIR>          NetHood
+23.09.2024  10:07         8 126 464 NTUSER.DAT
+26.03.2024  00:22         2 326 528 ntuser.dat.LOG1
+26.03.2024  00:22         1 146 880 ntuser.dat.LOG2
+26.03.2024  01:11           262 144 NTUSER.DAT.NotTweaked
+14.05.2024  08:02            65 536 NTUSER.DAT{c16f1274-b630-11ee-8be0-e0d55ea263be}.TM.blf
+14.05.2024  08:02           524 288 NTUSER.DAT{c16f1274-b630-11ee-8be0-e0d55ea263be}.TMContainer00000000000000000001.regtrans-ms
+26.03.2024  00:22           524 288 NTUSER.DAT{c16f1274-b630-11ee-8be0-e0d55ea263be}.TMContainer00000000000000000002.regtrans-ms
+26.03.2024  00:22                20 ntuser.ini
+26.03.2024  00:22    <DIR>          PrintHood
+26.03.2024  00:22    <DIR>          Recent
+26.03.2024  00:22    <DIR>          SendTo
+26.03.2024  00:22    <DIR>          главное меню
+26.03.2024  00:22    <DIR>          Мои документы
+26.03.2024  00:22    <DIR>          Шаблоны
+               8 файлов     12 976 148 байт
+              11 папок   9 843 220 480 байт свободно
+
+C:\Users\Artem>
+
+

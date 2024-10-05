@@ -1,0 +1,60 @@
+Turbo Assembler	 Version 2.0	    09/24/24 10:35:24	    Page 1
+example2.asm
+
+
+
+      1	0000			     stak segment stack	'stack'	     ;Начало сегмента стека
+      2	0000  0100*(??)		     db	256 dup	(?)		     ;Резервируем 256 байт для стека
+      3	0100			     stak ends			     ;Конец сегмента стека
+      4	0000			     data segment 'data'	     ;Начало сегмента данных
+      5	0000  44 61 6E 69 6C 61	20+  Hello db 'Danila Grigoriev, 251$'	     ;Строка для вывода
+      6	      47 72 69 67 6F 72	69+
+      7	      65 76 2C 20 32 35	31+
+      8	      24
+      9	0016			     data ends			     ;Конец сегмента данных
+     10	0000			     code segment 'code'	     ;Начало сегмента кода
+     11				     assume CS:code,DS:data,SS:stak  ;Сегментный регистр CS будет		    +
+     12				     указывать	на сегмент команд,
+     13								     ;регистр DS	- на сегмент данных, SS –  +
+     14				     на стек
+     15	0000			     start:			     ;Точка входа в программу start
+     16				     ;Обязательная инициализация регистра DS в начале	    +
+     17				     программы
+     18	0000  B8 0000s		     mov AX,data		     ;Адрес сегмента данных сначала	    +
+     19				     загрузим в AX,
+     20	0003  8E D8		     mov DS,AX			     ;а затем перенесем из AX в DS
+     21	0005  B4 09		     mov AH,09h			     ;Функция DOS 9h вывода на экран
+     22	0007  BA 0000r		     mov DX,offset Hello	     ;Адрес начала строки 'Hello, World!'	    +
+     23				     записывается в регистр	DX
+     24	000A  CD 21		     int 21h			     ;Вызов функции	DOS
+     25	000C  B8 4C00		     mov AX,4C00h		     ;Функция 4Ch завершения программы с +
+     26				     кодом	возврата 0
+     27	000F  CD 21		     int 21h			     ;Вызов функции	DOS
+     28	0011			     code ends			     ;Конец сегмента кода
+     29				     end start			     ;Конец текста программы с точкой    +
+     30				     входа
+Turbo Assembler	 Version 2.0	    09/24/24 10:35:24	    Page 2
+Symbol Table
+
+
+
+
+Symbol Name			  Type	 Value
+
+??DATE				  Text	 "09/24/24"
+??FILENAME			  Text	 "example2"
+??TIME				  Text	 "10:35:24"
+??VERSION			  Number 0200
+@CPU				  Text	 0101H
+@CURSEG				  Text	 CODE
+@FILENAME			  Text	 EXAMPLE2
+@WORDSIZE			  Text	 2
+HELLO				  Byte	 DATA:0000
+START				  Near	 CODE:0000
+
+Groups & Segments		  Bit Size Align  Combine Class
+
+CODE				  16  0011 Para	  none	  CODE
+DATA				  16  0016 Para	  none	  DATA
+STAK				  16  0100 Para	  Stack	  STACK
+
