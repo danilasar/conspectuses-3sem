@@ -3,6 +3,4 @@
 #include "characteristics.typ"
 #include "types.typ"
 #include "maxwell.typ"
-
-
-== Свойства волн
+#include "props.typ"
