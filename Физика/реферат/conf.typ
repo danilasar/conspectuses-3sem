@@ -143,7 +143,7 @@
 
 
   set text(
-    size: 14pt
+    size: 12pt
   )
 
   if settings.title_page.at("enabled", default: true) {
