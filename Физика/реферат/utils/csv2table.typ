@@ -1,6 +1,9 @@
 #let csv2table(file, header, caption) = {
     let types = csv(file)
     let cells = ()
+    if header.len() != 0 {
+        cells.push(table.header(..header))
+    }
     for row in range(0, types.len()) {
         for column in range(0, types.at(row).len()) {
             let val = types.at(row).at(column)
@@ -26,7 +29,6 @@
     figure(
         table(
             columns: types.at(0).len(),
-            table.header(..header),
             ..cells
         ), caption: caption
     )

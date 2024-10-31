@@ -1,10 +1,7 @@
 #include "intro.typ"
 #include "waves/mod.typ"
 #include "signals/mod.typ"
-
-= Стандарты Wi-Fi
-== Некоторые юридические аспекты
-
+#include "standarts.typ"
 = Физический уровень
 === Расширение спектра
 === Мультиплексирование
