@@ -14,7 +14,7 @@
 #include "attenuation.typ"
 #include "interference.typ"
 #include "bandwidth.typ"
-== Модуляция сигнала
+#include "modulation.typ"
 === Амплитудная модуляция
 === Частотная модуляция
 === Фазовая модуляция
