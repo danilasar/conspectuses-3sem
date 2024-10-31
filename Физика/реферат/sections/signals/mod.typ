@@ -13,7 +13,7 @@
 #include "spectral.typ"
 #include "attenuation.typ"
 #include "interference.typ"
-== Пропускная способность
+#include "bandwidth.typ"
 == Модуляция сигнала
 === Амплитудная модуляция
 === Частотная модуляция
