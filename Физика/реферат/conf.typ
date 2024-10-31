@@ -106,17 +106,21 @@
     margin: (
       top: 2cm,
       bottom: 2cm,
-      left: 2.5cm,
+      left: 3.75cm,
       right: 1.5cm
     )
   )
-  
     header()
     default_title(type, info)
   
   v(1fr)
   set align(center)
   text("Саратов 2024")
+  set par(
+    // first-line-indent: 1.25cm,
+    hanging-indent: -1.25cm,
+    justify: true
+  )
 }
 
 #let make_toc(
@@ -143,7 +147,8 @@
 
 
   set text(
-    size: 12pt
+    size: 12pt,
+    font: "PT Serif"
   )
 
   if settings.title_page.at("enabled", default: true) {
@@ -183,6 +188,9 @@
     v(4.3pt * (0.4 + 0.2))
   }
   set heading(numbering: "1.1")
+    for caps_heading in caps_headings {
+    show heading.where(body: caps_heading): set heading(numbering: none) 
+}
   set page(numbering: "1")
   if settings.contents_page.enabled {
     make_toc(info: info)
