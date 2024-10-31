@@ -15,7 +15,3 @@
 #include "interference.typ"
 #include "bandwidth.typ"
 #include "modulation.typ"
-=== Амплитудная модуляция
-=== Частотная модуляция
-=== Фазовая модуляция
-=== Квадратурная амплитудная модуляция
