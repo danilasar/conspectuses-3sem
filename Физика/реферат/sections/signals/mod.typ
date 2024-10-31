@@ -12,7 +12,7 @@
 
 #include "spectral.typ"
 #include "attenuation.typ"
-== Помехи
+#include "interference.typ"
 == Пропускная способность
 == Модуляция сигнала
 === Амплитудная модуляция
