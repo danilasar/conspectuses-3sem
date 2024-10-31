@@ -175,7 +175,7 @@
 		}
 		if caps_headings.contains(it.body) {
 			set align(center)
-			counter(heading).update(i => i - 1)
+			//counter(heading).update(i => calc.max(0, i - 1))
 			upper(it.body)
 		} else {
 			it
