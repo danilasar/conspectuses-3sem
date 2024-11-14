@@ -143,7 +143,9 @@
 
 	set text(
 		size: 12pt,
-		font: "PT Serif"
+		font: "PT Serif",
+		lang: "ru",
+		region: "ru"
 	)
 
 	if settings.title_page.at("enabled", default: true) {

@@ -1,4 +1,10 @@
 #let csv2table(file, header, caption) = {
+    set text(
+		size: 12pt,
+		font: "PT Serif",
+		lang: "ru",
+		region: "ru"
+	)
     let types = csv(file)
     let cells = ()
     if header.len() != 0 {
