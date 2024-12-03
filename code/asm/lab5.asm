@@ -1,45 +1,3 @@
-#import "conf.typ" : conf
-#show: conf.with(
-  title: [Лабораторная работа №5],
-  type: "referat",
-  info: (
-      author: (
-        name: [Григорьева Данилы Евгеньевича],
-        faculty: [КНиИТ],
-        group: "251",
-        sex: "male"
-      ),
-      inspector: (
-        degree: "Старший преподаватель",
-        name: "Е. М. Черноусова"
-      )
-  ),
-  settings: (
-    title_page: (
-      enabled: true
-    ),
-    contents_page: (
-      enabled: true
-    )
-  )
-)
-
-#align(left)[= Текст задания]  
-
-#v(0.35cm)
-// = Текст задания
-/ Вариант 2 : Изображение показано на рисунке 5.5. и состоит из 5 строк символов начиная с символа F (ASCII 46h) и далее по алфавиту с разными атрибутами начиная с 0Ah и далее плюс один.  В каждой строке по 10 символов, начальная позиция вывода 10:5. Надо выполнить задание, используя прямую работу с видеопамятью:
-#align(center)[#image("sections/task.gif", width: 85%)]
-#text(size: 12pt, align(center)[Рис. 5.5])
-
-#align(left)[= Алгоритм программы] 
-#v(0.5cm)
-
-#align(center)[#image("sections/alg.png", width: 95%)]
-
-#align(left)[= Текст программы на языке ассемблера с комментариями]  
-
-```nasm
 .model small
 .stack 100h
 .186
@@ -95,21 +53,3 @@ cout proc              ;процедура вывода символов на э
                                      ;процедуры команды
 cout endp           
 end start
-```
-
-#align(left)[= Скриншот запуска программы]  
-#v(0.5cm)
-#align(center)[#image("sections/cout.png", width: 95%)]
-
-
-
-// #align(left)[= Задание №3.2]
-
-// #include "sections/task2.typ"
-#pagebreak()
-
-#align(left)[= Ответы на контрольные вопросы]
-#v(0.3cm)
-
-#include "sections/questions.typ"
-
