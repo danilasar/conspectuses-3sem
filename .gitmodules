@@ -10,3 +10,6 @@
 [submodule "Ассемблер/assembler_lectures_3sem"]
 	path = Ассемблер/assembler_lectures_3sem
 	url = git@github.com:SE-legacy/assembler_lectures_3sem.git
+[submodule "Матанал/3 семестр/билеты"]
+	path = Матанал/3 семестр/билеты
+	url = git@github.com:danilasar/mathan-colloq-3sem.git
