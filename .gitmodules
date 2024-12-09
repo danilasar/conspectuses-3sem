@@ -4,3 +4,6 @@
 [submodule "code/oop"]
 	path = code/oop
 	url = git@github.com:danilasar/oop-3sem.git
+[submodule "Ассемблер/asm-referat"]
+	path = Ассемблер/asm-referat
+	url = git@github.com:danilasar/asm-referat.git
