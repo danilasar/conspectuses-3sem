@@ -1,0 +1,6 @@
+[submodule "oop-3sem"]
+	path = oop-3sem
+	url = git@github.com:danilasar/oop-3sem.git
+[submodule "code/oop"]
+	path = code/oop
+	url = git@github.com:danilasar/oop-3sem.git
