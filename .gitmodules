@@ -7,3 +7,6 @@
 [submodule "Ассемблер/asm-referat"]
 	path = Ассемблер/asm-referat
 	url = git@github.com:danilasar/asm-referat.git
+[submodule "Ассемблер/assembler_lectures_3sem"]
+	path = Ассемблер/assembler_lectures_3sem
+	url = git@github.com:SE-legacy/assembler_lectures_3sem.git
