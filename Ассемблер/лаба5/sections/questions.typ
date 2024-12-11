@@ -20,7 +20,7 @@
   align: center,
   table.hline(),
   table.header(
-    [**], 
+    [* *], 
     [*BL*], 
     [*R*], 
     [*G*],
@@ -68,7 +68,7 @@
   align: center,
   table.hline(),
   table.header(
-    [**],
+    [* *],
     table.cell(colspan:4, 
     [*Фон*]),
     table.cell(colspan:4, 
