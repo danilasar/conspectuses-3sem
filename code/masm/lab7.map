@@ -1,0 +1,102 @@
+ lab7
+
+ Timestamp is 675de9e3 (Sun Dec 15 00:26:11 2024)
+
+ Preferred load address is 0000000140000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 0000120fH .text$mn                CODE
+ 0002:00000000 00000144H .rdata                  DATA
+ 0002:00000143 00000000H .edata                  DATA
+ 0002:00000144 0000015bH .rdata$zzzdbg           DATA
+ 0003:00000000 00000e20H .data                   DATA
+ 0004:00000000 00000140H .idata$5                DATA
+ 0004:00000140 0000003cH .idata$2                DATA
+ 0004:0000017c 00000014H .idata$3                DATA
+ 0004:00000190 00000140H .idata$4                DATA
+ 0004:000002d0 000001a2H .idata$6                DATA
+
+  Address         Publics by Value              Rva+Base               Lib:Object
+
+ 0000:00000000       __x64_code_ranges_to_entry_points_count 0000000000000000     <absolute>
+ 0000:00000000       __arm64x_extra_rfe_table   0000000000000000     <absolute>
+ 0000:00000000       __hybrid_code_map_count    0000000000000000     <absolute>
+ 0000:00000000       __arm64x_native_entrypoint 0000000000000000     <absolute>
+ 0000:00000000       __guard_eh_cont_table      0000000000000000     <absolute>
+ 0000:00000000       __guard_eh_cont_count      0000000000000000     <absolute>
+ 0000:00000000       __enclave_config           0000000000000000     <absolute>
+ 0000:00000000       __arm64x_redirection_metadata_count 0000000000000000     <absolute>
+ 0000:00000000       __guard_flags              0000000000000000     <absolute>
+ 0000:00000000       __guard_fids_table         0000000000000000     <absolute>
+ 0000:00000000       __guard_check_icall_a64n_fptr 0000000000000000     <absolute>
+ 0000:00000000       __AbsoluteZero             0000000000000000     <absolute>
+ 0000:00000000       __hybrid_auxiliary_iat_copy 0000000000000000     <absolute>
+ 0000:00000000       __hybrid_auxiliary_iat     0000000000000000     <absolute>
+ 0000:00000000       __dynamic_value_reloc_table 0000000000000000     <absolute>
+ 0000:00000000       __guard_longjmp_count      0000000000000000     <absolute>
+ 0000:00000000       __guard_iat_count          0000000000000000     <absolute>
+ 0000:00000000       __x64_code_ranges_to_entry_points 0000000000000000     <absolute>
+ 0000:00000000       ___safe_se_handler_count   0000000000000000     <absolute>
+ 0000:00000000       __guard_iat_table          0000000000000000     <absolute>
+ 0000:00000000       __arm64x_redirection_metadata 0000000000000000     <absolute>
+ 0000:00000000       __arm64x_extra_rfe_table_size 0000000000000000     <absolute>
+ 0000:00000000       __guard_longjmp_table      0000000000000000     <absolute>
+ 0000:00000000       __volatile_metadata        0000000000000000     <absolute>
+ 0000:00000000       __hybrid_code_map          0000000000000000     <absolute>
+ 0000:00000000       ___safe_se_handler_table   0000000000000000     <absolute>
+ 0000:00000000       __guard_fids_count         0000000000000000     <absolute>
+ 0001:00000020       Halt                       0000000140001020 f   lab7.obj
+ 0001:00000045       mainCRTStartup             0000000140001045 f   lab7.obj
+ 0001:000001d3       GetComputerNameW           00000001400011d3 f   kernel32:KERNEL32.dll
+ 0001:000001d9       GetTempPathW               00000001400011d9 f   kernel32:KERNEL32.dll
+ 0001:000001df       ExitProcess                00000001400011df f   kernel32:KERNEL32.dll
+ 0001:000001e5       wsprintfW                  00000001400011e5 f   User32:USER32.dll
+ 0001:000001eb       MessageBoxW                00000001400011eb f   User32:USER32.dll
+ 0001:000001f1       GetUserNameW               00000001400011f1 f   AdvAPI32:ADVAPI32.dll
+ 0001:000001f7       RegGetValueW               00000001400011f7 f   AdvAPI32:ADVAPI32.dll
+ 0004:00000000       __imp_GetUserNameW         0000000140005000     AdvAPI32:ADVAPI32.dll
+ 0004:00000008       __imp_RegGetValueW         0000000140005008     AdvAPI32:ADVAPI32.dll
+ 0004:00000010       \177ADVAPI32_NULL_THUNK_DATA 0000000140005010     AdvAPI32:ADVAPI32.dll
+ 0004:00000068       __imp_ExitProcess          0000000140005068     kernel32:KERNEL32.dll
+ 0004:00000070       __imp_GetTempPathW         0000000140005070     kernel32:KERNEL32.dll
+ 0004:00000078       __imp_GetComputerNameW     0000000140005078     kernel32:KERNEL32.dll
+ 0004:00000080       \177KERNEL32_NULL_THUNK_DATA 0000000140005080     kernel32:KERNEL32.dll
+ 0004:000000d8       __imp_wsprintfW            00000001400050d8     User32:USER32.dll
+ 0004:000000e0       __imp_MessageBoxW          00000001400050e0     User32:USER32.dll
+ 0004:000000e8       \177USER32_NULL_THUNK_DATA 00000001400050e8     User32:USER32.dll
+ 0004:00000140       __IMPORT_DESCRIPTOR_KERNEL32 0000000140005140     kernel32:KERNEL32.dll
+ 0004:00000154       __IMPORT_DESCRIPTOR_USER32 0000000140005154     User32:USER32.dll
+ 0004:00000168       __IMPORT_DESCRIPTOR_ADVAPI32 0000000140005168     AdvAPI32:ADVAPI32.dll
+ 0004:0000017c       __NULL_IMPORT_DESCRIPTOR   000000014000517c     kernel32:KERNEL32.dll
+
+ entry point at        0001:0000000a
+
+ Static symbols
+
+ 0000:ffff9000       .debug$S                   0000000140000000     AdvAPI32:ADVAPI32.dll
+ 0000:ffff9000       .debug$S                   0000000140000000     AdvAPI32:ADVAPI32.dll
+ 0000:ffff9000       .debug$S                   0000000140000000     User32:USER32.dll
+ 0000:ffff9000       .debug$S                   0000000140000000     User32:USER32.dll
+ 0000:ffff9000       .debug$S                   0000000140000000     kernel32:KERNEL32.dll
+ 0000:ffff9000       .debug$S                   0000000140000000     kernel32:KERNEL32.dll
+ 0000:ffff9000       .debug$S                   0000000140000000     kernel32:KERNEL32.dll
+ 0001:00000020       $$000000                   0000000140001020     lab7.obj
+ 0003:00000000       caption                    0000000140004000     lab7.obj
+ 0003:0000002a       message                    000000014000402a     lab7.obj
+ 0003:000000b4       error                      00000001400040b4     lab7.obj
+ 0003:000000c2       erUser                     00000001400040c2     lab7.obj
+ 0003:0000010a       erComp                     000000014000410a     lab7.obj
+ 0003:0000014e       erTemp                     000000014000414e     lab7.obj
+ 0003:000001a2       erWinver                   00000001400041a2     lab7.obj
+ 0003:000001e4       regPath                    00000001400041e4     lab7.obj
+ 0003:00000220       regKey                     0000000140004220     lab7.obj
+ 0003:0000023e       hKey                       000000014000423e     lab7.obj
+ 0003:00000242       errFlags                   0000000140004242     lab7.obj
+ 0003:00000246       msg                        0000000140004246     lab7.obj
+ 0003:00000646       username                   0000000140004646     lab7.obj
+ 0003:00000846       compname                   0000000140004846     lab7.obj
+ 0003:00000866       temppath                   0000000140004866     lab7.obj
+ 0003:00000a70       version                    0000000140004a70     lab7.obj
+ 0004:00000302       .idata$6                   0000000140005302     kernel32:KERNEL32.dll
+ 0004:0000032a       .idata$6                   000000014000532a     User32:USER32.dll
+ 0004:00000356       .idata$6                   0000000140005356     AdvAPI32:ADVAPI32.dll

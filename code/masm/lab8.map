@@ -1,0 +1,103 @@
+ lab8
+
+ Timestamp is 6761ad6f (Tue Dec 17 20:57:19 2024)
+
+ Preferred load address is 0000000140000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 00001570H .text$mn                CODE
+ 0002:00000000 00000144H .rdata                  DATA
+ 0002:00000143 00000000H .edata                  DATA
+ 0002:00000144 0000015bH .rdata$zzzdbg           DATA
+ 0003:00000000 0000079cH .data                   DATA
+ 0004:00000000 000000e8H .idata$5                DATA
+ 0004:000000e8 00000028H .idata$2                DATA
+ 0004:00000110 00000018H .idata$3                DATA
+ 0004:00000128 000000e8H .idata$4                DATA
+ 0004:00000210 0000017bH .idata$6                DATA
+
+  Address         Publics by Value              Rva+Base               Lib:Object
+
+ 0000:00000000       __hybrid_code_map_count    0000000000000000     <absolute>
+ 0000:00000000       __arm64x_native_entrypoint 0000000000000000     <absolute>
+ 0000:00000000       __guard_eh_cont_table      0000000000000000     <absolute>
+ 0000:00000000       __enclave_config           0000000000000000     <absolute>
+ 0000:00000000       __arm64x_redirection_metadata_count 0000000000000000     <absolute>
+ 0000:00000000       __x64_code_ranges_to_entry_points 0000000000000000     <absolute>
+ 0000:00000000       __guard_eh_cont_count      0000000000000000     <absolute>
+ 0000:00000000       __guard_fids_count         0000000000000000     <absolute>
+ 0000:00000000       __guard_fids_table         0000000000000000     <absolute>
+ 0000:00000000       __guard_check_icall_a64n_fptr 0000000000000000     <absolute>
+ 0000:00000000       __AbsoluteZero             0000000000000000     <absolute>
+ 0000:00000000       __hybrid_auxiliary_iat_copy 0000000000000000     <absolute>
+ 0000:00000000       ___safe_se_handler_table   0000000000000000     <absolute>
+ 0000:00000000       __hybrid_auxiliary_iat     0000000000000000     <absolute>
+ 0000:00000000       __dynamic_value_reloc_table 0000000000000000     <absolute>
+ 0000:00000000       __guard_longjmp_count      0000000000000000     <absolute>
+ 0000:00000000       __guard_iat_count          0000000000000000     <absolute>
+ 0000:00000000       __x64_code_ranges_to_entry_points_count 0000000000000000     <absolute>
+ 0000:00000000       __guard_flags              0000000000000000     <absolute>
+ 0000:00000000       ___safe_se_handler_count   0000000000000000     <absolute>
+ 0000:00000000       __arm64x_extra_rfe_table_size 0000000000000000     <absolute>
+ 0000:00000000       __arm64x_extra_rfe_table   0000000000000000     <absolute>
+ 0000:00000000       __guard_iat_table          0000000000000000     <absolute>
+ 0000:00000000       __hybrid_code_map          0000000000000000     <absolute>
+ 0000:00000000       __arm64x_redirection_metadata 0000000000000000     <absolute>
+ 0000:00000000       __volatile_metadata        0000000000000000     <absolute>
+ 0000:00000000       __guard_longjmp_table      0000000000000000     <absolute>
+ 0001:00000060       initHandlers               0000000140001060 f   lab8.obj
+ 0001:00000093       flush                      0000000140001093 f   lab8.obj
+ 0001:000000ab       cout                       00000001400010ab f   lab8.obj
+ 0001:000000dc       cin                        00000001400010dc f   lab8.obj
+ 0001:00000132       stoi                       0000000140001132 f   lab8.obj
+ 0001:000002d7       input                      00000001400012d7 f   lab8.obj
+ 0001:0000031e       calc                       000000014000131e f   lab8.obj
+ 0001:00000351       output                     0000000140001351 f   lab8.obj
+ 0001:00000417       mainCRTStartup             0000000140001417 f   lab8.obj
+ 0001:0000052b       GetStdHandle               000000014000152b f   kernel32:KERNEL32.dll
+ 0001:00000531       WriteConsoleW              0000000140001531 f   kernel32:KERNEL32.dll
+ 0001:00000537       ReadConsoleW               0000000140001537 f   kernel32:KERNEL32.dll
+ 0001:0000053d       lstrlenW                   000000014000153d f   kernel32:KERNEL32.dll
+ 0001:00000543       ExitProcess                0000000140001543 f   kernel32:KERNEL32.dll
+ 0001:00000549       wsprintfW                  0000000140001549 f   User32:USER32.dll
+ 0004:00000000       __imp_WriteConsoleW        0000000140005000     kernel32:KERNEL32.dll
+ 0004:00000008       __imp_ReadConsoleW         0000000140005008     kernel32:KERNEL32.dll
+ 0004:00000010       __imp_lstrlenW             0000000140005010     kernel32:KERNEL32.dll
+ 0004:00000018       __imp_ExitProcess          0000000140005018     kernel32:KERNEL32.dll
+ 0004:00000020       __imp_GetStdHandle         0000000140005020     kernel32:KERNEL32.dll
+ 0004:00000028       \177KERNEL32_NULL_THUNK_DATA 0000000140005028     kernel32:KERNEL32.dll
+ 0004:00000088       __imp_wsprintfW            0000000140005088     User32:USER32.dll
+ 0004:00000090       \177USER32_NULL_THUNK_DATA 0000000140005090     User32:USER32.dll
+ 0004:000000e8       __IMPORT_DESCRIPTOR_KERNEL32 00000001400050e8     kernel32:KERNEL32.dll
+ 0004:000000fc       __IMPORT_DESCRIPTOR_USER32 00000001400050fc     User32:USER32.dll
+ 0004:00000110       __NULL_IMPORT_DESCRIPTOR   0000000140005110     kernel32:KERNEL32.dll
+
+ entry point at        0001:00000028
+
+ Static symbols
+
+ 0000:ffff9000       .debug$S                   0000000140000000     User32:USER32.dll
+ 0000:ffff9000       .debug$S                   0000000140000000     kernel32:KERNEL32.dll
+ 0000:ffff9000       .debug$S                   0000000140000000     kernel32:KERNEL32.dll
+ 0000:ffff9000       .debug$S                   0000000140000000     kernel32:KERNEL32.dll
+ 0000:ffff9000       .debug$S                   0000000140000000     kernel32:KERNEL32.dll
+ 0000:ffff9000       .debug$S                   0000000140000000     kernel32:KERNEL32.dll
+ 0001:00000060       $$000000                   0000000140001060     lab8.obj
+ 0003:00000000       strA                       0000000140004000     lab8.obj
+ 0003:0000000a       strB                       000000014000400a     lab8.obj
+ 0003:00000014       strResult                  0000000140004014     lab8.obj
+ 0003:00000036       strNum                     0000000140004036     lab8.obj
+ 0003:0000003e       strLowest                  000000014000403e     lab8.obj
+ 0003:00000066       erStoi                     0000000140004066     lab8.obj
+ 0003:0000008e       erNaN                      000000014000408e     lab8.obj
+ 0003:000000e2       erOver                     00000001400040e2     lab8.obj
+ 0003:00000156       varA                       0000000140004156     lab8.obj
+ 0003:00000158       varB                       0000000140004158     lab8.obj
+ 0003:0000015a       varResult                  000000014000415a     lab8.obj
+ 0003:00000162       hCin                       0000000140004162     lab8.obj
+ 0003:0000016a       hCout                      000000014000416a     lab8.obj
+ 0003:00000172       buffer                     0000000140004172     lab8.obj
+ 0003:00000572       bufLen                     0000000140004572     lab8.obj
+ 0003:0000057a       number                     000000014000457a     lab8.obj
+ 0004:0000025a       .idata$6                   000000014000525a     kernel32:KERNEL32.dll
+ 0004:00000274       .idata$6                   0000000140005274     User32:USER32.dll

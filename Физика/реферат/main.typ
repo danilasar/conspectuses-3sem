@@ -23,6 +23,7 @@
         )
     )
 )
+#set text(font: "Liberation Sans")
 #include "sections/mod.typ"
 #heading(numbering: none)[Список использованных источников]
 
