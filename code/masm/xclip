@@ -146,7 +146,7 @@ BUF_SIZE=1024
             jae parse_nan_error
                 lea rax, buffer
                 movzx rcx,i  
-                mov dx,word ptr [rax+rcx*2]  
+                mov dx,pword tr [rax+rcx*2]  
                 mov bx,2Dh
                 cmp dx,bx
                 je change_sign
@@ -206,7 +206,7 @@ BUF_SIZE=1024
             mov digit,ax  
             mov bx, wMAX / 10
             cmp num,bx
-            jg parse_overflow_error
+            jg parse_nan_error
             cmp num,bx
             jne build_number
                 mov bx, 7

@@ -1,5 +1,5 @@
-Microsoft (R) Macro Assembler (x64) Version 14.29.30147.0   12/17/24 20:57:18
-Z:\data\docs\sgu\code\lab8.asm				     Page 1 - 1
+Microsoft (R) Macro Assembler (x64) Version 14.29.30147.0   12/18/24 11:10:59
+Z:\data\docs\sgu\code\masm\lab8.asm			     Page 1 - 1
 
 
 				extrn GetStdHandle:proc, WriteConsoleW:proc, ReadConsoleW:proc, lstrlenW:proc, wsprintfW:proc, ExitProcess:proc
@@ -210,7 +210,7 @@ Z:\data\docs\sgu\code\lab8.asm				     Page 1 - 1
  000000F0  48/ 8B 05		            mov rax,bufLen
 	   00000572 R
  000000F7  38 45 FC		            cmp i,al  
- 000000FA  0F 83 00000156	        jae parse_nan_error
+ 000000FA  0F 83 00000155	        jae parse_nan_error
  00000100  48/ 8D 05		            lea rax,buffer
 	   00000172 R
  00000107  48/ 0F B6 4D		            movzx rcx,i
@@ -226,254 +226,254 @@ Z:\data\docs\sgu\code\lab8.asm				     Page 1 - 1
  00000120  48/ 63 05		            movsxd rax,dword ptr [bufLen]  
 	   00000572 R
  00000127  38 45 FC		            cmp i,al
- 0000012A  0F 83 00000126	            jae parse_nan_error
+ 0000012A  0F 83 00000125	            jae parse_nan_error
  00000130  48/ 8D 05		                lea rax, buffer
 	   00000172 R
  00000137  48/ 0F B6 4D		                movzx rcx,i  
 	   FC
- 0000013C  66| 0F B6 14 48	                movzx dx,byte ptr [rax+rcx*2]  
- 00000141  66| BB 002D		                mov bx,2Dh
- 00000145  66| 3B D3		                cmp dx,bx
- 00000148  74 09		                je change_sign
- 0000014A  66| BB 002B		                    mov bx,2Bh
- 0000014E  66| 3B D3		                    cmp dx,bx  
- 00000151  75 2A		                    jne convert_to_int
- 00000153			                change_sign:
- 00000153  48/ 8D 05		                    lea rax, buffer
+ 0000013C  66| 8B 14 48		                mov dx,word ptr [rax+rcx*2]  
+ 00000140  66| BB 002D		                mov bx,2Dh
+ 00000144  66| 3B D3		                cmp dx,bx
+ 00000147  74 09		                je change_sign
+ 00000149  66| BB 002B		                    mov bx,2Bh
+ 0000014D  66| 3B D3		                    cmp dx,bx  
+ 00000150  75 2A		                    jne convert_to_int
+ 00000152			                change_sign:
+ 00000152  48/ 8D 05		                    lea rax, buffer
 	   00000172 R
- 0000015A  48/ 0F B6 4D		                    movzx rcx,i
+ 00000159  48/ 0F B6 4D		                    movzx rcx,i
 	   FC
- 0000015F  66| 8B 14 48		                    mov dx,word ptr [rax+rcx*2]  
- 00000163  66| BB 002D		                    mov bx,2Dh
- 00000167  66| 3B D3		                    cmp dx,bx  
- 0000016A  75 04		                    jne its_plus
- 0000016C  B2 FF		                        mov dl,-1
- 0000016E  EB 02		                        jmp its_minus
- 00000170			                    its_plus:
- 00000170  B2 01		                        mov dl,1  
- 00000172			                    its_minus:
- 00000172  88 55 FD		                    mov sign,dl  
- 00000175  8A 45 FC		                    mov al,i
- 00000178  FE C0		                    inc al
- 0000017A  88 45 FC		                    mov i,al
- 0000017D			        convert_to_int:
- 0000017D  48/ 63 05		            movsxd rax,dword ptr [bufLen]  
+ 0000015E  66| 8B 14 48		                    mov dx,word ptr [rax+rcx*2]  
+ 00000162  66| BB 002D		                    mov bx,2Dh
+ 00000166  66| 3B D3		                    cmp dx,bx  
+ 00000169  75 04		                    jne its_plus
+ 0000016B  B2 FF		                        mov dl,-1
+ 0000016D  EB 02		                        jmp its_minus
+ 0000016F			                    its_plus:
+ 0000016F  B2 01		                        mov dl,1  
+ 00000171			                    its_minus:
+ 00000171  88 55 FD		                    mov sign,dl  
+ 00000174  8A 45 FC		                    mov al,i
+ 00000177  FE C0		                    inc al
+ 00000179  88 45 FC		                    mov i,al
+ 0000017C			        convert_to_int:
+ 0000017C  48/ 63 05		            movsxd rax,dword ptr [bufLen]  
 	   00000572 R
- 00000184  38 45 FC		            cmp i,al
- 00000187  0F 83 000000B3	            jae apply_sign_and_return
- 0000018D  48/ 8D 05		                lea rax,buffer
+ 00000183  38 45 FC		            cmp i,al
+ 00000186  0F 83 000000B3	            jae apply_sign_and_return
+ 0000018C  48/ 8D 05		                lea rax,buffer
 	   00000172 R
- 00000194  48/ 0F B6 4D		                movzx rcx,i
+ 00000193  48/ 0F B6 4D		                movzx rcx,i
 	   FC
- 00000199  66| 8B 04 48		                mov ax,word ptr [rax+rcx*2]  
- 0000019D  66| 85 C0		                test ax,ax  
- 000001A0  0F 84 0000009A	            je apply_sign_and_return
- 000001A6  48/ 8D 05		            lea rax,buffer
+ 00000198  66| 8B 04 48		                mov ax,word ptr [rax+rcx*2]  
+ 0000019C  66| 85 C0		                test ax,ax  
+ 0000019F  0F 84 0000009A	            je apply_sign_and_return
+ 000001A5  48/ 8D 05		            lea rax,buffer
 	   00000172 R
- 000001AD  48/ 0F B6 4D		            movzx rcx,i
+ 000001AC  48/ 0F B6 4D		            movzx rcx,i
 	   FC
- 000001B2  66| 8B 04 48		            mov ax,word ptr [rax+rcx*2]  
- 000001B6  66| BB 0020		            mov bx, 20h
- 000001BA  66| 3B C3		            cmp ax,bx
- 000001BD  75 0A		            jne check_is_digit
- 000001BF  8A 4D FC		                mov cl, i 
- 000001C2  FE C1		                inc cl
- 000001C4  88 4D FC		                mov i, cl
- 000001C7  EB B4		                jmp convert_to_int
- 000001C9			            check_is_digit:
- 000001C9  48/ 8D 05		            lea rax,buffer
+ 000001B1  66| 8B 04 48		            mov ax,word ptr [rax+rcx*2]  
+ 000001B5  66| BB 0020		            mov bx, 20h
+ 000001B9  66| 3B C3		            cmp ax,bx
+ 000001BC  75 0A		            jne check_is_digit
+ 000001BE  8A 4D FC		                mov cl, i 
+ 000001C1  FE C1		                inc cl
+ 000001C3  88 4D FC		                mov i, cl
+ 000001C6  EB B4		                jmp convert_to_int
+ 000001C8			            check_is_digit:
+ 000001C8  48/ 8D 05		            lea rax,buffer
 	   00000172 R
- 000001D0  48/ 0F B6 4D		            movzx rcx,i
+ 000001CF  48/ 0F B6 4D		            movzx rcx,i
 	   FC
- 000001D5  66| 8B 04 48		            mov ax,word ptr [rax+rcx*2]  
- 000001D9  66| BA 0030		            mov dx, 30h
- 000001DD  66| 3B C2		            cmp ax, dx
- 000001E0  7C 74		            jl parse_nan_error
- 000001E2  66| BA 0039		            mov dx, 39h
- 000001E6  66| 3B C2		            cmp ax, dx
- 000001E9  7F 6B		            jg parse_nan_error
- 000001EB			            char_to_dword:
- 000001EB  48/ 8D 05		            lea rax,buffer
+ 000001D4  66| 8B 04 48		            mov ax,word ptr [rax+rcx*2]  
+ 000001D8  66| BA 0030		            mov dx, 30h
+ 000001DC  66| 3B C2		            cmp ax, dx
+ 000001DF  7C 74		            jl parse_nan_error
+ 000001E1  66| BA 0039		            mov dx, 39h
+ 000001E5  66| 3B C2		            cmp ax, dx
+ 000001E8  7F 6B		            jg parse_nan_error
+ 000001EA			            char_to_dword:
+ 000001EA  48/ 8D 05		            lea rax,buffer
 	   00000172 R
- 000001F2  48/ 0F B6 4D		            movzx rcx,i
+ 000001F1  48/ 0F B6 4D		            movzx rcx,i
 	   FC
- 000001F7  66| 8B 04 48		            mov ax,word ptr [rax+rcx*2]
- 000001FB  66| 83 E8 30		            sub ax,30h
- 000001FF  66| 89 45 FA		            mov digit,ax  
- 00000203  66| BB 0CCC		            mov bx, wMAX / 10
- 00000207  66| 39 5D FE		            cmp num,bx
- 0000020B  7F 49		            jg parse_nan_error
- 0000020D  66| 39 5D FE		            cmp num,bx
- 00000211  75 0A		            jne build_number
- 00000213  66| BB 0007		                mov bx, 7
- 00000217  66| 39 5D FA		                cmp digit,bx
- 0000021B  7F 42		                jg parse_overflow_error
- 0000021D			            build_number:
- 0000021D  66| 8B 45 FE		            mov ax, num
- 00000221  66| BB 000A		            mov bx, 0Ah
- 00000225  66| F7 EB		            imul bx
- 00000228  66| 8B 5D FA		            mov bx, digit
- 0000022C  66| 03 C3		            add ax, bx
- 0000022F  66| 89 45 FE		            mov num,ax  
- 00000233  8A 45 FC		            mov al,i
- 00000236  FE C0		            inc al
- 00000238  88 45 FC		            mov i,al
- 0000023B  E9 FFFFFF3D		            jmp convert_to_int
- 00000240			        apply_sign_and_return:
- 00000240  66| 8B 45 FE		            mov ax, num
- 00000244  66| 0F BE 5D		            movsx bx, sign
+ 000001F6  66| 8B 04 48		            mov ax,word ptr [rax+rcx*2]
+ 000001FA  66| 83 E8 30		            sub ax,30h
+ 000001FE  66| 89 45 FA		            mov digit,ax  
+ 00000202  66| BB 0CCC		            mov bx, wMAX / 10
+ 00000206  66| 39 5D FE		            cmp num,bx
+ 0000020A  7F 52		            jg parse_overflow_error
+ 0000020C  66| 39 5D FE		            cmp num,bx
+ 00000210  75 0A		            jne build_number
+ 00000212  66| BB 0007		                mov bx, 7
+ 00000216  66| 39 5D FA		                cmp digit,bx
+ 0000021A  7F 42		                jg parse_overflow_error
+ 0000021C			            build_number:
+ 0000021C  66| 8B 45 FE		            mov ax, num
+ 00000220  66| BB 000A		            mov bx, 0Ah
+ 00000224  66| F7 EB		            imul bx
+ 00000227  66| 8B 5D FA		            mov bx, digit
+ 0000022B  66| 03 C3		            add ax, bx
+ 0000022E  66| 89 45 FE		            mov num,ax  
+ 00000232  8A 45 FC		            mov al,i
+ 00000235  FE C0		            inc al
+ 00000237  88 45 FC		            mov i,al
+ 0000023A  E9 FFFFFF3D		            jmp convert_to_int
+ 0000023F			        apply_sign_and_return:
+ 0000023F  66| 8B 45 FE		            mov ax, num
+ 00000243  66| 0F BE 5D		            movsx bx, sign
 	   FD
- 00000249  66| 0F AF C3		            imul ax, bx
- 0000024D  41/ 59		            pop r9
- 0000024F  41/ 58		            pop r8
- 00000251  5A			            pop rdx
- 00000252  59			            pop rcx
- 00000253  5B			            pop rbx
+ 00000248  66| 0F AF C3		            imul ax, bx
+ 0000024C  41/ 59		            pop r9
+ 0000024E  41/ 58		            pop r8
+ 00000250  5A			            pop rdx
+ 00000251  59			            pop rcx
+ 00000252  5B			            pop rbx
 				            ret
- 00000256			        parse_nan_error:
- 00000256  48/ 8D 0D		            lea rcx, erNaN
+ 00000255			        parse_nan_error:
+ 00000255  48/ 8D 0D		            lea rcx, erNaN
 	   0000008E R
- 0000025D  EB 07		            jmp parse_error
- 0000025F			        parse_overflow_error:
- 0000025F  48/ 8D 0D		            lea rcx, erOver
+ 0000025C  EB 07		            jmp parse_error
+ 0000025E			        parse_overflow_error:
+ 0000025E  48/ 8D 0D		            lea rcx, erOver
 	   000000E2 R
- 00000266			        parse_error:
- 00000266  E8 FFFFFDE0		            call cout
- 0000026B  48/ 33 C9		            xor rcx, rcx 
- 0000026E  E8 00000000 E	            call ExitProcess
+ 00000265			        parse_error:
+ 00000265  E8 FFFFFDE1		            call cout
+ 0000026A  48/ 33 C9		            xor rcx, rcx 
+ 0000026D  E8 00000000 E	            call ExitProcess
 				            ret
 				        ret 
- 00000277			    stoi endp
+ 00000276			    stoi endp
 				
- 00000277			    input proc
- 00000277  50			        push rax
- 00000278  51			        push rcx
- 00000279  48/ 83 EC 08		        sub rsp, 8
- 0000027D  48/ 8D 0D		        lea rcx, strA
+ 00000276			    input proc
+ 00000276  50			        push rax
+ 00000277  51			        push rcx
+ 00000278  48/ 83 EC 08		        sub rsp, 8
+ 0000027C  48/ 8D 0D		        lea rcx, strA
 	   00000000 R
- 00000284  E8 FFFFFDC2		        call cout
- 00000289  E8 FFFFFDEE		        call cin
- 0000028E  E8 FFFFFE3F		        call stoi
- 00000293  66| 89 05		        mov varA, ax
+ 00000283  E8 FFFFFDC3		        call cout
+ 00000288  E8 FFFFFDEF		        call cin
+ 0000028D  E8 FFFFFE40		        call stoi
+ 00000292  66| 89 05		        mov varA, ax
 	   00000156 R
 				
- 0000029A  48/ 8D 0D		        lea rcx, strB
+ 00000299  48/ 8D 0D		        lea rcx, strB
 	   0000000A R
- 000002A1  E8 FFFFFDA5		        call cout
- 000002A6  E8 FFFFFDD1		        call cin
- 000002AB  E8 FFFFFE22		        call stoi 
- 000002B0  66| 89 05		        mov varB, ax
+ 000002A0  E8 FFFFFDA6		        call cout
+ 000002A5  E8 FFFFFDD2		        call cin
+ 000002AA  E8 FFFFFE23		        call stoi 
+ 000002AF  66| 89 05		        mov varB, ax
 	   00000158 R
- 000002B7  48/ 83 C4 08		        add rsp, 8
- 000002BB  58			        pop rax 
- 000002BC  59			        pop rcx
- 000002BD  C3			        ret
- 000002BE			    input endp
- 000002BE			    calc proc
- 000002BE  50			        push rax
- 000002BF  53			        push rbx
- 000002C0  51			        push rcx
- 000002C1  48/ 83 EC 08		        sub rsp, 8 
- 000002C5  48/ C7 C0		        mov rax, 5Dh
+ 000002B6  48/ 83 C4 08		        add rsp, 8
+ 000002BA  58			        pop rax 
+ 000002BB  59			        pop rcx
+ 000002BC  C3			        ret
+ 000002BD			    input endp
+ 000002BD			    calc proc
+ 000002BD  50			        push rax
+ 000002BE  53			        push rbx
+ 000002BF  51			        push rcx
+ 000002C0  48/ 83 EC 08		        sub rsp, 8 
+ 000002C4  48/ C7 C0		        mov rax, 5Dh
 	   0000005D
- 000002CC  48/ 0F BF 1D		        movsx rbx, varA 
+ 000002CB  48/ 0F BF 1D		        movsx rbx, varA 
 	   00000156 R
- 000002D4  48/ 0F BF 0D		        movsx rcx, varB
+ 000002D3  48/ 0F BF 0D		        movsx rcx, varB
 	   00000158 R
- 000002DC  48/ 03 C3		        add rax, rbx
- 000002DF  48/ 2B C1		        sub rax, rcx
- 000002E2  48/ 89 05		        mov varResult, rax
+ 000002DB  48/ 03 C3		        add rax, rbx
+ 000002DE  48/ 2B C1		        sub rax, rcx
+ 000002E1  48/ 89 05		        mov varResult, rax
 	   0000015A R
- 000002E9  48/ 83 C4 08		        add rsp, 8
- 000002ED  59			        pop rcx
- 000002EE  5B			        pop rbx
- 000002EF  58			        pop rax
- 000002F0  C3			        ret
- 000002F1			    calc endp 
- 000002F1			    output proc 
- 000002F1  50			        push rax
- 000002F2  53			        push rbx
- 000002F3  51			        push rcx
- 000002F4  52			        push rdx
- 000002F5  41/ 50		        push r8
- 000002F7  41/ 51		        push r9
- 000002F9  48/ 83 EC 30		        sub rsp, 30h
- 000002FD  48/ 8B 1D		        mov rbx, varResult
+ 000002E8  48/ 83 C4 08		        add rsp, 8
+ 000002EC  59			        pop rcx
+ 000002ED  5B			        pop rbx
+ 000002EE  58			        pop rax
+ 000002EF  C3			        ret
+ 000002F0			    calc endp 
+ 000002F0			    output proc 
+ 000002F0  50			        push rax
+ 000002F1  53			        push rbx
+ 000002F2  51			        push rcx
+ 000002F3  52			        push rdx
+ 000002F4  41/ 50		        push r8
+ 000002F6  41/ 51		        push r9
+ 000002F8  48/ 83 EC 30		        sub rsp, 30h
+ 000002FC  48/ 8B 1D		        mov rbx, varResult
 	   0000015A R
- 00000304  48/ 89 5C 24		        mov [rsp + 20h], rbx
+ 00000303  48/ 89 5C 24		        mov [rsp + 20h], rbx
 	   20
- 00000309  48/ 8D 0D		        lea rcx, buffer
+ 00000308  48/ 8D 0D		        lea rcx, buffer
 	   00000172 R
- 00000310  48/ 8D 15		        lea rdx, strResult
+ 0000030F  48/ 8D 15		        lea rdx, strResult
 	   00000014 R
- 00000317  4C/ 0F BF 05		        movsx r8, varA
+ 00000316  4C/ 0F BF 05		        movsx r8, varA
 	   00000156 R
- 0000031F  4C/ 0F BF 0D		        movsx r9, varB
+ 0000031E  4C/ 0F BF 0D		        movsx r9, varB
 	   00000158 R
- 00000327  E8 00000000 E	        call wsprintfW
+ 00000326  E8 00000000 E	        call wsprintfW
 				
- 0000032C  48/ 8D 0D		        lea rcx, buffer 
+ 0000032B  48/ 8D 0D		        lea rcx, buffer 
 	   00000172 R
- 00000333  E8 FFFFFD13		        call cout
+ 00000332  E8 FFFFFD14		        call cout
 				
- 00000338  48/ 8D 0D		        lea rcx, strLowest 
+ 00000337  48/ 8D 0D		        lea rcx, strLowest 
 	   0000003E R
- 0000033F  E8 FFFFFD07		        call cout
+ 0000033E  E8 FFFFFD08		        call cout
 				
- 00000344  E8 FFFFFCEA		        call flush
- 00000349  48/ 33 D2		        xor rdx, rdx
- 0000034C  66| 8B 15		        mov dx, varA
+ 00000343  E8 FFFFFCEB		        call flush
+ 00000348  48/ 33 D2		        xor rdx, rdx
+ 0000034B  66| 8B 15		        mov dx, varA
 	   00000156 R
- 00000353  66| 44/ 8B 05	        mov r8w, varB
+ 00000352  66| 44/ 8B 05	        mov r8w, varB
 	   00000158 R
- 0000035B  66| 41/ 3B D0	        cmp dx, r8w
- 0000035F  7F 16		        jg b_is_lower
- 00000361  48/ 8D 0D		            lea rcx, strA 
+ 0000035A  66| 41/ 3B D0	        cmp dx, r8w
+ 0000035E  7F 16		        jg b_is_lower
+ 00000360  48/ 8D 0D		            lea rcx, strA 
 	   00000000 R
- 00000368  E8 FFFFFCDE		            call cout
- 0000036D  4C/ 0F BF 05		            movsx r8, varA
+ 00000367  E8 FFFFFCDF		            call cout
+ 0000036C  4C/ 0F BF 05		            movsx r8, varA
 	   00000156 R
- 00000375  EB 14		            jmp cout_lowerest
- 00000377			        b_is_lower: 
- 00000377  48/ 8D 0D		            lea rcx, strB 
+ 00000374  EB 14		            jmp cout_lowerest
+ 00000376			        b_is_lower: 
+ 00000376  48/ 8D 0D		            lea rcx, strB 
 	   0000000A R
- 0000037E  E8 FFFFFCC8		            call cout
- 00000383  4C/ 0F BF 05		            movsx r8, varB 
+ 0000037D  E8 FFFFFCC9		            call cout
+ 00000382  4C/ 0F BF 05		            movsx r8, varB 
 	   00000158 R
- 0000038B			        cout_lowerest:
- 0000038B  48/ 8D 0D		        lea rcx, buffer
+ 0000038A			        cout_lowerest:
+ 0000038A  48/ 8D 0D		        lea rcx, buffer
 	   00000172 R
- 00000392  48/ 8D 15		        lea rdx, strNum
+ 00000391  48/ 8D 15		        lea rdx, strNum
 	   00000036 R
- 00000399  E8 00000000 E	        call wsprintfW
- 0000039E  48/ 8D 0D		        lea rcx, buffer 
+ 00000398  E8 00000000 E	        call wsprintfW
+ 0000039D  48/ 8D 0D		        lea rcx, buffer 
 	   00000172 R
- 000003A5  E8 FFFFFCA1		        call cout 
- 000003AA  48/ 83 C4 30		        add rsp, 30h
- 000003AE  41/ 59		        pop r9
- 000003B0  41/ 58		        pop r8
- 000003B2  5A			        pop rdx
- 000003B3  59			        pop rcx
- 000003B4  5B			        pop rbx
- 000003B5  58			        pop rax
- 000003B6  C3			        ret
- 000003B7			    output endp
- 000003B7			    mainCRTStartup proc
- 000003B7  55			        push rbp 
- 000003B8  E8 FFFFFC43		        call initHandlers
+ 000003A4  E8 FFFFFCA2		        call cout 
+ 000003A9  48/ 83 C4 30		        add rsp, 30h
+ 000003AD  41/ 59		        pop r9
+ 000003AF  41/ 58		        pop r8
+ 000003B1  5A			        pop rdx
+ 000003B2  59			        pop rcx
+ 000003B3  5B			        pop rbx
+ 000003B4  58			        pop rax
+ 000003B5  C3			        ret
+ 000003B6			    output endp
+ 000003B6			    mainCRTStartup proc
+ 000003B6  55			        push rbp 
+ 000003B7  E8 FFFFFC44		        call initHandlers
 				
- 000003BD  E8 FFFFFEB5		        call input
- 000003C2  E8 FFFFFEF7		        call calc
- 000003C7  E8 FFFFFF25		        call output
+ 000003BC  E8 FFFFFEB5		        call input
+ 000003C1  E8 FFFFFEF7		        call calc
+ 000003C6  E8 FFFFFF25		        call output
 				        
- 000003CC  48/ 33 C9		        xor rcx, rcx 
- 000003CF  E8 00000000 E	        call ExitProcess
- 000003D4  5D			        pop rbp
- 000003D5  C3			        ret
- 000003D6			    mainCRTStartup endp
+ 000003CB  48/ 33 C9		        xor rcx, rcx 
+ 000003CE  E8 00000000 E	        call ExitProcess
+ 000003D3  5D			        pop rbp
+ 000003D4  C3			        ret
+ 000003D5			    mainCRTStartup endp
 				end
-Microsoft (R) Macro Assembler (x64) Version 14.29.30147.0   12/17/24 20:57:18
-Z:\data\docs\sgu\code\lab8.asm				     Symbols 2 - 1
+Microsoft (R) Macro Assembler (x64) Version 14.29.30147.0   12/18/24 11:10:59
+Z:\data\docs\sgu\code\masm\lab8.asm			     Symbols 2 - 1
 
 
 
@@ -482,35 +482,35 @@ Procedures, parameters, and locals:
 
                 N a m e                 Type     Value    Attr
 
-calc . . . . . . . . . . . . . .	P 	 000002BE _TEXT	Length= 00000033 Public
+calc . . . . . . . . . . . . . .	P 	 000002BD _TEXT	Length= 00000033 Public
 cin  . . . . . . . . . . . . . .	P 	 0000007C _TEXT	Length= 00000056 Public
 cout . . . . . . . . . . . . . .	P 	 0000004B _TEXT	Length= 00000031 Public
 flush  . . . . . . . . . . . . .	P 	 00000033 _TEXT	Length= 00000018 Public
   clear_buffer . . . . . . . . .	L 	 00000043 _TEXT	
 initHandlers . . . . . . . . . .	P 	 00000000 _TEXT	Length= 00000033 Public
-input  . . . . . . . . . . . . .	P 	 00000277 _TEXT	Length= 00000047 Public
-mainCRTStartup . . . . . . . . .	P 	 000003B7 _TEXT	Length= 0000001F Public
-output . . . . . . . . . . . . .	P 	 000002F1 _TEXT	Length= 000000C6 Public
-  b_is_lower . . . . . . . . . .	L 	 00000377 _TEXT	
-  cout_lowerest  . . . . . . . .	L 	 0000038B _TEXT	
-stoi . . . . . . . . . . . . . .	P 	 000000D2 _TEXT	Length= 000001A5 Public
+input  . . . . . . . . . . . . .	P 	 00000276 _TEXT	Length= 00000047 Public
+mainCRTStartup . . . . . . . . .	P 	 000003B6 _TEXT	Length= 0000001F Public
+output . . . . . . . . . . . . .	P 	 000002F0 _TEXT	Length= 000000C6 Public
+  b_is_lower . . . . . . . . . .	L 	 00000376 _TEXT	
+  cout_lowerest  . . . . . . . .	L 	 0000038A _TEXT	
+stoi . . . . . . . . . . . . . .	P 	 000000D2 _TEXT	Length= 000001A4 Public
   num  . . . . . . . . . . . . .	Word	 rbp - 00000002
   sign . . . . . . . . . . . . .	Byte	 rbp - 00000003
   i  . . . . . . . . . . . . . .	Byte	 rbp - 00000004
   digit  . . . . . . . . . . . .	Word	 rbp - 00000006
   skip_leading_space . . . . . .	L 	 000000F0 _TEXT	
   check_for_sign . . . . . . . .	L 	 00000120 _TEXT	
-  change_sign  . . . . . . . . .	L 	 00000153 _TEXT	
-  its_plus . . . . . . . . . . .	L 	 00000170 _TEXT	
-  its_minus  . . . . . . . . . .	L 	 00000172 _TEXT	
-  convert_to_int . . . . . . . .	L 	 0000017D _TEXT	
-  check_is_digit . . . . . . . .	L 	 000001C9 _TEXT	
-  char_to_dword  . . . . . . . .	L 	 000001EB _TEXT	
-  build_number . . . . . . . . .	L 	 0000021D _TEXT	
-  apply_sign_and_return  . . . .	L 	 00000240 _TEXT	
-  parse_nan_error  . . . . . . .	L 	 00000256 _TEXT	
-  parse_overflow_error . . . . .	L 	 0000025F _TEXT	
-  parse_error  . . . . . . . . .	L 	 00000266 _TEXT	
+  change_sign  . . . . . . . . .	L 	 00000152 _TEXT	
+  its_plus . . . . . . . . . . .	L 	 0000016F _TEXT	
+  its_minus  . . . . . . . . . .	L 	 00000171 _TEXT	
+  convert_to_int . . . . . . . .	L 	 0000017C _TEXT	
+  check_is_digit . . . . . . . .	L 	 000001C8 _TEXT	
+  char_to_dword  . . . . . . . .	L 	 000001EA _TEXT	
+  build_number . . . . . . . . .	L 	 0000021C _TEXT	
+  apply_sign_and_return  . . . .	L 	 0000023F _TEXT	
+  parse_nan_error  . . . . . . .	L 	 00000255 _TEXT	
+  parse_overflow_error . . . . .	L 	 0000025E _TEXT	
+  parse_error  . . . . . . . . .	L 	 00000265 _TEXT	
 
 
 Symbols:
